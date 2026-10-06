@@ -1,0 +1,14 @@
+[project]
+name = "stack-frame-extractor"
+version = "0.1.0"
+description = "Captures the current call stack frames and returns a list of function_name, file_path, and line_number tuples for error context attachment."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
