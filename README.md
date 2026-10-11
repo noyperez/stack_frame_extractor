@@ -23,3 +23,10 @@ The trade-off: the extractor's own frames are included in the output by default 
 ## Edge cases
 
 Frames whose code object is `None` (which can appear for certain C-level callers) are skipped rather than emitted with placeholder values, so the returned list may be shorter than the raw stack depth. Requesting a `start_frame` larger than the stack depth returns an empty list, matching Python's slice semantics. Negative `start_frame` raises `ValueError`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
