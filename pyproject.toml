@@ -1,6 +1,6 @@
 [project]
 name = "stack-frame-extractor"
-version = "0.1.0"
+version = "0.1.1"
 description = "Captures the current call stack frames and returns a list of function_name, file_path, and line_number tuples for error context attachment."
 requires-python = ">=3.10"
 dependencies = []
